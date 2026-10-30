@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>DS Lab Portal — Department of Computer Science &amp; Engineering</title>
+  <meta name="description" content="DS Lab Portal for Computer Science &amp; Engineering (Data Science). Track 10 laboratory experiment executions, tools used, and student profile." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="brand" id="brand-link" role="button" tabindex="0" title="DS Lab Portal Home">
+        <div class="brand-badge">MBU</div>
+        <div class="brand-text">
+          <h1>Data Science Digital Library</h1>
+          <span>B.Tech CSE (Data Science)</span>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li>
+            <button class="nav-link active" id="nav-home" data-tab="tab-home">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              Home
+            </button>
+          </li>
+          <li>
+            <button class="nav-link" id="nav-executions" data-tab="tab-executions">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              Lab Executions
+            </button>
+          </li>
+          <li>
+            <button class="nav-link" id="nav-tools" data-tab="tab-tools">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              Tools
+            </button>
+          </li>
+          <li>
+            <button class="nav-link" id="nav-modules" data-tab="tab-modules">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11z"></path><path d="M8 8h8M8 12h8M8 16h5"></path></svg>
+              Modules
+            </button>
+          </li>
+          <li>
+            <button class="nav-link" id="nav-profile" data-tab="tab-profile">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              Profile
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Switch Theme">
+          <span id="themeIcon">☀️</span>
+          <span id="themeLabel">Light</span>
+        </button>
+        <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main class="main-wrapper">
+
+    <!-- ==================== 1. HOME TAB (Reference Style) ==================== -->
+    <section id="tab-home" class="tab-pane active" aria-labelledby="nav-home">
+      <div class="home-grid">
+        
+        <!-- Left Main Column -->
+        <div class="home-main-col">
+          
+          <!-- Landing Hero Card -->
+          <article class="card hero-card">
+            <div class="uni-header">
+              <div class="uni-logo">MBU</div>
+              <div class="uni-details">
+                <h2>Mohan Babu University</h2>
+                <small>Est. 1984 • Department of Computer Science &amp; Engineering</small>
+              </div>
+            </div>
+
+            <div class="portal-title-block">
+              <h2>DS Lab Portal</h2>
+              <div class="subject-code">
+                <span>Subject Code: <strong>22DS102006</strong></span>
+                <span class="badge-tag">Academic Year 2024–2025</span>
+                <span class="badge-tag">Semester IV</span>
+              </div>
+            </div>
+
+            <p class="portal-description">
+              Welcome to the <strong>Data Science Laboratory Portal</strong>. This platform provides a centralized, faculty-reviewed repository for recording laboratory experiment executions, computational pipelines, statistical evaluations, and algorithmic toolsets designed for CSE (Data Science) students.
+            </p>
+
+            <!-- Summary Stats -->
+            <div class="stats-bar">
+              <div class="stat-item">
+                <div class="stat-val" id="statTotalExps">10</div>
+                <div class="stat-lbl">Total Experiments</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-val" id="statCompletedExps">10</div>
+                <div class="stat-lbl">Completed</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-val" id="statInProgressExps">0</div>
+                <div class="stat-lbl">In Progress</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-val" id="statPendingExps">0</div>
+                <div class="stat-lbl">Pending</div>
+              </div>
+            </div>
+
+            <!-- Quick Action Links -->
+            <div class="action-row">
+              <button class="btn btn-primary" id="btnGoToExecutions">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                View Lab Executions
+              </button>
+              <button class="btn btn-secondary" id="btnGoToTools">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                Experiment Tools
+              </button>
+              <button class="btn btn-secondary" id="btnGoToModules">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11z"></path><path d="M8 8h8M8 12h8M8 16h5"></path></svg>
+                Course Modules
+              </button>
+            </div>
+
+            <!-- GitHub Banner -->
+            <a class="github-banner" id="homeGithubLink" href="https://github.com" target="_blank" rel="noopener">
+              <div class="github-info">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                <div>
+                  <b id="homeGithubLabel">GitHub Repository</b>
+                  <span>View source code, notebooks &amp; datasets</span>
+                </div>
+              </div>
+              <span>↗</span>
+            </a>
+          </article>
+
+          <!-- Experiments Quick Preview Section -->
+          <section class="home-experiments-preview">
+            <div class="home-exp-header">
+              <h3>Lab Experiments Overview</h3>
+              <span class="badge-tag" id="homeExpCountBadge">10 Experiments</span>
+            </div>
+
+            <div class="search-input-box">
+              <span class="search-icon">⌕</span>
+              <input type="search" id="homeSearchInput" placeholder="Search experiments by title, topic, or tools..." />
+            </div>
+
+            <!-- Accordion List rendered dynamically via JS -->
+            <div class="home-exp-list" id="homeExpAccordionList"></div>
+          </section>
+        </div>
+
+        <!-- Right Aside Column: Student ID Card -->
+        <aside class="student-card card" id="studentAsideCard">
+          <div class="student-card-header">
+            <b>STUDENT ID CARD</b>
+            <small>MOHAN BABU UNIVERSITY</small>
+          </div>
+
+          <div class="student-card-body">
+            <div class="student-photo-wrapper">
+              <img id="asideStudentPhoto" class="student-photo" src="assets/student_photo.jpg" alt="Student Photo" />
+            </div>
+
+            <dl class="student-dl" id="asideStudentDetails">
+              <div class="student-dl-row">
+                <dt>Name</dt>
+                <dd id="asideName">M. Anand</dd>
+              </div>
+              <div class="student-dl-row">
+                <dt>ID Number</dt>
+                <dd id="asideRollNo">24102A030058</dd>
+              </div>
+              <div class="student-dl-row">
+                <dt>Section</dt>
+                <dd id="asideSection">Section A</dd>
+              </div>
+              <div class="student-dl-row">
+                <dt>Branch</dt>
+                <dd id="asideBranch">B.Tech CSE (DS)</dd>
+              </div>
+              <div class="student-dl-row">
+                <dt>Faculty</dt>
+                <dd id="asideFaculty">S. Bosu Babu</dd>
+              </div>
+              <div class="student-dl-row">
+                <dt>Profession</dt>
+                <dd>Assistant Professor</dd>
+              </div>
+              <div class="student-dl-row">
+                <dt>Lab Progress</dt>
+                <dd id="asideProgressBadge" style="color: var(--success);">8 / 10 Done</dd>
+              </div>
+            </dl>
+
+            <div class="student-socials">
+              <a class="social-pill" id="asideGithub" href="https://github.com" target="_blank" rel="noopener">
+                <span>GitHub</span> ↗
+              </a>
+              <a class="social-pill" id="asideLinkedin" href="https://linkedin.com" target="_blank" rel="noopener">
+                <span>LinkedIn</span> ↗
+              </a>
+            </div>
+
+            <button class="btn btn-primary edit-profile-trigger" id="btnEditProfileAside">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+              Edit Profile
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==================== 2. LAB EXECUTIONS TAB ==================== -->
+    <section id="tab-executions" class="tab-pane" aria-labelledby="nav-executions">
+      <div class="page-header">
+        <h2>Lab Executions</h2>
+        <p>
+          Official record of all 10 Data Science Laboratory experiments. For each experiment, verify algorithm execution status, preview generated statistical outputs or visual plots, and upload updated execution files.
+        </p>
+      </div>
+
+      <!-- Toolbar: Filters, Search, Add & Reset -->
+      <div class="executions-toolbar">
+        <div class="filter-pills" id="executionFilterPills">
+          <button class="filter-btn active" data-filter="all">All (10)</button>
+          <button class="filter-btn" data-filter="Completed">Completed (10)</button>
+          <button class="filter-btn" data-filter="In Progress">In Progress (0)</button>
+          <button class="filter-btn" data-filter="Pending">Pending (0)</button>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+          <div class="executions-search">
+            <input type="search" id="executionsSearchInput" placeholder="Filter experiments..." />
+          </div>
+          <button class="btn btn-primary btn-sm" id="btnOpenAddExpModal" title="Add a new experiment">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            + Add Experiment
+          </button>
+          <button class="btn btn-secondary btn-sm" id="btnResetDefaults" title="Restore original 10 verified experiments">
+            Reset Defaults
+          </button>
+        </div>
+      </div>
+
+      <!-- Executions List / Cards -->
+      <div class="executions-grid" id="executionsList">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- ==================== 3. TOOLS TAB ==================== -->
+    <section id="tab-tools" class="tab-pane" aria-labelledby="nav-tools">
+      <div class="tools-page-header-row">
+        <div class="page-header" style="margin-bottom: 0;">
+          <h2>Experiment Tools Used</h2>
+          <p>
+            Comprehensive inventory of programming languages, computational libraries, statistical frameworks, and machine learning modules deployed across the Data Science Lab experiments. Formatted for academic faculty evaluation and viva reference.
+          </p>
+        </div>
+        <button class="btn btn-primary" id="btnOpenToolsModalTop" title="Directly enter tools for any experiment">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+          Enter / Edit Tools
+        </button>
+      </div>
+
+      <!-- Professor Overview Cards -->
+      <div class="tools-summary-grid">
+        <div class="tools-summary-card">
+          <h4>Core Environment</h4>
+          <p>Execution runtime and interactive notebook environments used for reproducible experimentation.</p>
+          <div class="tools-summary-tags">
+            <span class="tool-tag">Python 3.10+</span>
+            <span class="tool-tag">Jupyter Notebook</span>
+            <span class="tool-tag">VS Code</span>
+          </div>
+        </div>
+
+        <div class="tools-summary-card">
+          <h4>Data Manipulation</h4>
+          <p>High-performance vector operations, tabular data structures, handling nulls, and transformation.</p>
+          <div class="tools-summary-tags">
+            <span class="tool-tag">NumPy</span>
+            <span class="tool-tag">Pandas</span>
+          </div>
+        </div>
+
+        <div class="tools-summary-card">
+          <h4>Visualization</h4>
+          <p>Statistical figure design, heatmaps, pairplots, and probability distribution curves.</p>
+          <div class="tools-summary-tags">
+            <span class="tool-tag">Matplotlib</span>
+            <span class="tool-tag">Seaborn</span>
+          </div>
+        </div>
+
+        <div class="tools-summary-card">
+          <h4>Modeling &amp; Stats</h4>
+          <p>Statistical tests, supervised regression/classification, clustering, and association rules.</p>
+          <div class="tools-summary-tags">
+            <span class="tool-tag">Scikit-learn</span>
+            <span class="tool-tag">SciPy.stats</span>
+            <span class="tool-tag">MLxtend</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Matrix Table for All Experiments -->
+      <div class="tools-table-container">
+        <table class="tools-table">
+          <thead>
+            <tr>
+              <th style="width: 130px;">Experiment</th>
+              <th style="width: 230px;">Title &amp; Domain</th>
+              <th style="width: 220px;">Tools &amp; Libraries Used</th>
+              <th>Purpose of Each Tool</th>
+              <th style="width: 120px; text-align: center;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="toolsTableBody">
+            <!-- Rendered dynamically by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ==================== 4. MODULES TAB ==================== -->
+    <section id="tab-modules" class="tab-pane" aria-labelledby="nav-modules">
+      <div class="page-header">
+        <h2>Course Modules</h2>
+        <p>
+          The Data Science curriculum is organized into five focused modules that connect theory, data acquisition, analytics, storytelling, and forecasting into a complete analytical lifecycle.
+        </p>
+      </div>
+      <div class="module-grid" id="modulesGrid"></div>
+    </section>
+
+    <!-- ==================== 5. PROFILE TAB ==================== -->
+    <section id="tab-profile" class="tab-pane" aria-labelledby="nav-profile">
+      <div class="page-header">
+        <h2>Student Profile &amp; Academic Record</h2>
+        <p>
+          Verified academic profile for the Data Science Laboratory course. Track personal credentials, mentor attribution, technical competencies, and laboratory completion milestones.
+        </p>
+      </div>
+
+      <div class="profile-card-large card">
+        <div class="profile-cover">
+          <div class="profile-cover-brand">
+            MOHAN BABU UNIVERSITY • CSE (DATA SCIENCE)
+          </div>
+          <button class="btn btn-secondary btn-sm" id="btnEditProfileMain">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+            Edit Profile
+          </button>
+        </div>
+
+        <div class="profile-main-body">
+          <div class="profile-header-row">
+            <div class="profile-avatar-block">
+              <img id="profilePhotoLarge" class="profile-avatar-large" src="assets/student_photo.jpg" alt="Student Profile Photo" />
+              <div class="profile-name-block">
+                <h2 id="profileNameLarge">M. Anand</h2>
+                <p id="profileRollLarge">24102A030058 • B.Tech CSE (Data Science)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lab Progress Bar -->
+          <div class="profile-progress-box">
+            <div class="progress-header">
+              <b>Laboratory Course Progress</b>
+              <span id="profileProgressText">10 / 10 Experiments Completed (100%)</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="profileProgressFill" style="width: 80%;"></div>
+            </div>
+            <div class="progress-stats-row">
+              <span id="profileProgressStatus">Status: All Lab Experiments Completed &amp; Ready for Evaluation</span>
+              <span>Target: 10 / 10</span>
+            </div>
+          </div>
+
+          <!-- Profile Details Grid -->
+          <div class="profile-details-grid">
+            <div class="detail-card">
+              <label>Full Name</label>
+              <div class="val" id="profileDetailName">M. Anand</div>
+            </div>
+
+            <div class="detail-card">
+              <label>Roll Number / ID</label>
+              <div class="val" id="profileDetailRollNo">24102A030058</div>
+            </div>
+
+            <div class="detail-card">
+              <label>Section</label>
+              <div class="val" id="profileDetailSection">Section A</div>
+            </div>
+
+            <div class="detail-card">
+              <label>Branch / Program</label>
+              <div class="val" id="profileDetailBranch">B.Tech CSE (Data Science)</div>
+            </div>
+
+            <div class="detail-card">
+              <label>Assistant Professor / Faculty</label>
+              <div class="val" id="profileDetailProfessor">S. Bosu Babu</div>
+            </div>
+
+            <div class="detail-card">
+              <label>Subject &amp; Code</label>
+              <div class="val">Data Science Lab (22DS102006)</div>
+            </div>
+
+            <div class="detail-card">
+              <label>GitHub Repository</label>
+              <a class="val" id="profileDetailGithub" href="https://github.com" target="_blank" rel="noopener">github.com</a>
+            </div>
+
+            <div class="detail-card">
+              <label>LinkedIn Profile</label>
+              <a class="val" id="profileDetailLinkedin" href="https://linkedin.com" target="_blank" rel="noopener">linkedin.com</a>
+            </div>
+          </div>
+
+          <!-- Technical Skills Section -->
+          <div class="profile-skills-box">
+            <h4>Technical Skills &amp; Competencies</h4>
+            <div class="skills-pill-wrap" id="profileSkillsList">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- 1. EDIT PROFILE MODAL -->
+  <div class="modal-backdrop" id="editProfileModal" role="dialog" aria-modal="true" aria-labelledby="editProfileTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="editProfileTitle">Edit Student Profile Details</h3>
+        <button class="modal-close-btn" id="closeEditProfileBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <form id="editProfileForm" class="modal-body">
+        
+        <!-- Photo edit row -->
+        <div class="photo-edit-row">
+          <img id="formPhotoPreview" class="photo-edit-preview" src="assets/student_photo.jpg" alt="Preview Photo" />
+          <div class="photo-edit-controls">
+            <label style="font-size: 13px; font-weight: 600; display: block; margin-bottom: 4px;">Update Profile Photo</label>
+            <input type="file" id="formPhotoInput" accept="image/*" class="form-input" style="padding: 6px 10px; font-size: 12px; margin-bottom: 6px;" />
+            <small>Upload JPG, PNG or WEBP (Max 5MB). Changes save directly to database.</small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="formName">Full Name *</label>
+            <input type="text" id="formName" class="form-input" required placeholder="e.g. M. Anand" />
+          </div>
+          <div class="form-group">
+            <label for="formRollNo">Roll No / ID Number *</label>
+            <input type="text" id="formRollNo" class="form-input" required placeholder="e.g. 24102A030058" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="formSection">Section *</label>
+            <input type="text" id="formSection" class="form-input" required placeholder="e.g. Section A" />
+          </div>
+          <div class="form-group">
+            <label for="formBranch">Branch *</label>
+            <input type="text" id="formBranch" class="form-input" required placeholder="e.g. B.Tech CSE (Data Science)" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="formProfessor">Assistant Professor / Faculty *</label>
+          <input type="text" id="formProfessor" class="form-input" required placeholder="e.g. S. Bosu Babu" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="formGithub">GitHub URL</label>
+            <input type="url" id="formGithub" class="form-input" placeholder="https://github.com/your-username" />
+          </div>
+          <div class="form-group">
+            <label for="formLinkedin">LinkedIn URL</label>
+            <input type="url" id="formLinkedin" class="form-input" placeholder="https://linkedin.com/in/your-profile" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="formSkills">Technical Skills (comma-separated)</label>
+          <input type="text" id="formSkills" class="form-input" placeholder="Python, NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn..." />
+          <small>Enter skills separated by commas to display as tags on your profile.</small>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="cancelEditProfileBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveProfileBtn">Save Profile Details</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. LAB EXECUTION OUTPUT VIEWER & UPLOADER MODAL -->
+  <div class="modal-backdrop" id="outputModal" role="dialog" aria-modal="true" aria-labelledby="outputModalTitle">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <h3 id="outputModalTitle">Experiment Execution Details</h3>
+          <span id="outputModalBadge" class="status-badge status-completed">Completed</span>
+        </div>
+        <button class="modal-close-btn" id="closeOutputModalBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="output-modal-hero">
+          <h4 id="outputExpName">Experiment 1 — Data Cleaning</h4>
+          <p id="outputExpDesc">Data Ingestion, Cleaning &amp; Preprocessing</p>
+        </div>
+
+        <!-- Output Image / Chart Preview -->
+        <label style="font-size: 12.5px; font-weight: 700; color: var(--mute); display: block; margin-bottom: 6px; text-transform: uppercase;">
+          Execution Output Visualization Preview
+        </label>
+        <div class="output-view-container">
+          <img id="outputModalImg" class="output-view-img" src="assets/outputs/exp1_data_cleaning.svg" alt="Execution Output Preview" />
+        </div>
+
+        <!-- Terminal Console Execution Log -->
+        <label style="font-size: 12.5px; font-weight: 700; color: var(--mute); display: block; margin-bottom: 6px; text-transform: uppercase;">
+          Execution Log &amp; Console Summary
+        </label>
+        <pre class="output-console" id="outputModalConsole">Loading execution metrics...</pre>
+
+        <!-- Status update & Upload new output -->
+        <div style="background: var(--panel2); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 18px; margin-top: 10px;">
+          <h5 style="font-size: 14px; font-weight: 700; margin-bottom: 12px; color: var(--text);">Update Experiment Status &amp; Upload Output</h5>
+          
+          <div class="form-row" style="margin-bottom: 14px;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="outputStatusSelect">Execution Status</label>
+              <select id="outputStatusSelect" class="form-select">
+                <option value="Completed">Completed</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Pending">Pending</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="outputModalFileInput">Upload Replacement Output File</label>
+              <input type="file" id="outputModalFileInput" accept="image/*,.pdf,.txt,.py,.ipynb,.csv" class="form-input" style="padding: 6px 10px; font-size: 12px;" />
+            </div>
+          </div>
+          <small style="color: var(--mute); display: block;">Supports charts, plot images (PNG, JPG, SVG), output text logs, Jupyter notebooks, or CSV files.</small>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a id="downloadOutputBtn" class="btn btn-secondary" href="#" download="execution_output">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download Output File
+        </a>
+        <button type="button" class="btn btn-primary" id="saveExecutionChangesBtn">
+          Save Changes to Database
+        </button>
+  <!-- 3. EDIT EXPERIMENT DETAILS MODAL -->
+  <div class="modal-backdrop" id="editExpModal" role="dialog" aria-modal="true" aria-labelledby="editExpModalTitle">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h3 id="editExpModalTitle">Edit Experiment Details</h3>
+        <button class="modal-close-btn" id="closeEditExpModalBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <form id="editExpForm" class="modal-body">
+        <input type="hidden" id="editExpId" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="editExpNumber">Experiment Number *</label>
+            <input type="text" id="editExpNumber" class="form-input" required placeholder="e.g. Experiment 1" />
+          </div>
+          <div class="form-group">
+            <label for="editExpStatus">Execution Status *</label>
+            <select id="editExpStatus" class="form-select">
+              <option value="Completed">Completed</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Pending">Pending</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="editExpTitle">Experiment Title *</label>
+          <input type="text" id="editExpTitle" class="form-input" required placeholder="e.g. Data Ingestion, Cleaning &amp; Preprocessing" />
+        </div>
+
+        <div class="form-group">
+          <label for="editExpDesc">Experiment Description *</label>
+          <textarea id="editExpDesc" class="form-textarea" rows="2" required placeholder="Short objective or description of this lab experiment..."></textarea>
+        </div>
+
+        <!-- Direct Tools Section -->
+        <div style="background: var(--panel2); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 18px; margin-bottom: 18px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 6px;">Tools &amp; Software Used</h4>
+          <p style="font-size: 12px; color: var(--mute); margin-bottom: 12px;">Directly enter the tools you used for this experiment (e.g. for Experiment 1: Python, NumPy, Pandas) and their purpose.</p>
+          
+          <div class="form-group">
+            <label for="editExpTools">Tools Used (comma-separated)</label>
+            <input type="text" id="editExpTools" class="form-input" placeholder="e.g. Python, NumPy, Pandas, Jupyter Notebook" />
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="editExpToolPurposes">Tool Purpose Details (one per line format: Tool: Purpose)</label>
+            <textarea id="editExpToolPurposes" class="form-textarea" rows="4" placeholder="Python: Base scripting language&#10;NumPy: Matrix math and multidimensional arrays&#10;Pandas: Loading dataset and cleaning missing values"></textarea>
+            <small>Example: <code>NumPy: Array manipulations and calculations</code></small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="editExpLog">Execution Log / Console Summary</label>
+          <textarea id="editExpLog" class="form-textarea" rows="3" style="font-family: var(--font-mono); font-size: 12px;" placeholder="Console logs, command metrics, or output summary..."></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="cancelEditExpBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveEditExpBtn">Save Experiment Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. DIRECT ENTER / EDIT TOOLS FOR EXPERIMENT MODAL -->
+  <div class="modal-backdrop" id="enterToolsModal" role="dialog" aria-modal="true" aria-labelledby="enterToolsModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="enterToolsModalTitle">Enter Experiment Tools</h3>
+        <button class="modal-close-btn" id="closeEnterToolsModalBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <form id="enterToolsForm" class="modal-body">
+        <div class="form-group">
+          <label for="toolsModalExpSelect">Select Experiment *</label>
+          <select id="toolsModalExpSelect" class="form-select">
+            <!-- Populated dynamically by app.js -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="toolsModalToolsInput">Tools / Software / Libraries Used *</label>
+          <input type="text" id="toolsModalToolsInput" class="form-input" required placeholder="e.g. Python, NumPy, Pandas, Matplotlib" />
+          <small>Enter tool names separated by commas (e.g. for Ep-1: <strong>Python, NumPy, Pandas</strong>)</small>
+        </div>
+
+        <!-- Live Chips Preview -->
+        <div class="form-group">
+          <label style="font-size: 12px; color: var(--mute);">Live Tool Tags Preview:</label>
+          <div class="live-tag-preview" id="toolsModalLivePreview">
+            <span style="color: var(--mute); font-size: 12px;">Type tools above to preview tags...</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="toolsModalPurposesInput">Purpose of Each Tool (one per line: Tool: Purpose)</label>
+          <textarea id="toolsModalPurposesInput" class="form-textarea" rows="4" placeholder="Python: Base programming environment&#10;NumPy: Multidimensional array computations&#10;Pandas: DataFrame handling and missing value imputation"></textarea>
+          <small>Specify what you used each tool for in this experiment so faculty can easily review it.</small>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="cancelEnterToolsBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveEnterToolsBtn">Save Tools to Database</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 5. DELETE EXPERIMENT CONFIRMATION MODAL -->
+  <div class="modal-backdrop" id="deleteExpModal" role="dialog" aria-modal="true" aria-labelledby="deleteExpModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="deleteExpModalTitle" style="color: var(--danger);">Confirm Experiment Deletion</h3>
+        <button class="modal-close-btn" id="closeDeleteExpModalBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="delete-warning-box">
+          <h4 id="deleteExpTargetName" style="font-size: 16px; font-weight: 700;">Delete Experiment</h4>
+          <p id="deleteExpWarningDesc">Are you sure you want to permanently delete this experiment? This action removes the experiment details, uploaded execution files, and tools reference from the portal and database.</p>
+        </div>
+        <p style="font-size: 12.5px; color: var(--mute);">
+          Note: If you delete an experiment by mistake, you can always click <strong>Reset Defaults</strong> on the Lab Executions page to restore the default experiments.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="cancelDeleteExpBtn">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteExpBtn">Yes, Delete Experiment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. ADD NEW EXPERIMENT MODAL -->
+  <div class="modal-backdrop" id="addExpModal" role="dialog" aria-modal="true" aria-labelledby="addExpModalTitle">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h3 id="addExpModalTitle">+ Add New Lab Experiment</h3>
+        <button class="modal-close-btn" id="closeAddExpModalBtn" aria-label="Close modal">&times;</button>
+      </div>
+
+      <form id="addExpForm" class="modal-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="addExpNumber">Experiment Number *</label>
+            <input type="text" id="addExpNumber" class="form-input" required placeholder="e.g. Experiment 11" />
+          </div>
+          <div class="form-group">
+            <label for="addExpStatus">Initial Status *</label>
+            <select id="addExpStatus" class="form-select">
+              <option value="Completed">Completed</option>
+              <option value="In Progress" selected>In Progress</option>
+              <option value="Pending">Pending</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="addExpTitle">Experiment Title *</label>
+          <input type="text" id="addExpTitle" class="form-input" required placeholder="e.g. Deep Neural Network Classification on Tabular Data" />
+        </div>
+
+        <div class="form-group">
+          <label for="addExpDesc">Description &amp; Objective *</label>
+          <textarea id="addExpDesc" class="form-textarea" rows="2" required placeholder="Detailed objective of this lab execution..."></textarea>
+        </div>
+
+        <div style="background: var(--panel2); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 18px; margin-bottom: 18px;">
+          <h4 style="font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 6px;">Tools &amp; Libraries Used</h4>
+          
+          <div class="form-group">
+            <label for="addExpTools">Tools Used (comma-separated)</label>
+            <input type="text" id="addExpTools" class="form-input" placeholder="e.g. Python, TensorFlow, Keras, Pandas" />
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <label for="addExpToolPurposes">Tool Purpose Details (one per line: Tool: Purpose)</label>
+            <textarea id="addExpToolPurposes" class="form-textarea" rows="3" placeholder="Python: High-level language&#10;TensorFlow: Neural network model training&#10;Pandas: Data loading and batching"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="addExpFileInput">Upload Initial Output File (Optional)</label>
+          <input type="file" id="addExpFileInput" accept="image/*,.pdf,.txt,.py,.ipynb,.csv" class="form-input" style="padding: 6px 10px; font-size: 12px;" />
+          <small>Upload plot graphic or output log for this new experiment.</small>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="cancelAddExpBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveAddExpBtn">Add Experiment to Portal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <strong>Mohan Babu University</strong> • Department of Computer Science &amp; Engineering
+      </div>
+      <div>
+        Data Science Lab (22DS102006) • Academic Portal
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
